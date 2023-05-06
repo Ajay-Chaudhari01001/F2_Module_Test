@@ -4,47 +4,85 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <title>f2 Module Test</title>
+    <link
+      rel="shortcut icon"
+      href="./download.png.crdownload"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="./download.png.crdownload" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <main>
-      <h1>Student Portal</h1>
-      <form id="search-form">
-        <input type="text" placeholder="Search" name="search" />
-        <button>Search</button>
-      </form>
-      <div class="button-container">
-        <button id="az_sort_btn">Sort A->Z</button
-        ><button id="za_sort_btn">Sort Z->A</button
-        ><button id="sort_marks_btn">Sort By Marks</button
-        ><button id="pass_btn">Sort By Passing</button
-        ><button id="sort_class_btn">Sort By Class</button
-        ><button id="sort_gender_btn">Sort By Gender</button>
+    <div class="container">
+      <nav class="nav">Student Portal</nav>
+      <div class="contentcontainer">
+        <div class="inputcontainer">
+          <input type="text" placeholder="Search" id="searchstring" />
+          <button id="searchbutton" onclick="filterData()">Search</button>
+        </div>
+        <div class="sortingbuttons">
+          <button id="sortaz" onclick="sortazf()">
+            Sort A <i class="material-icons">arrow_right_alt</i> Z
+          </button>
+          <button id="sortza" onclick="sortza()">
+            Sort Z<i class="material-icons">arrow_right_alt</i>A
+          </button>
+          <button id="sortbymarks" onclick="sortbymarks()">
+            Sort By Marks
+          </button>
+          <button id="sortbypassing" onclick="sortbypassing()">
+            Sort By Passing
+          </button>
+          <button id="sortbyclass" onclick="sortbyclass()">
+            Sort By Class
+          </button>
+          <button id="sortbygender" onclick="sortbygender()">
+            Sort By Gender
+          </button>
+        </div>
+        <div class="tablecontainer">
+          <table id="table">
+            <thead>
+              <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Gender</td>
+                <td>Class</td>
+                <td>Marks</td>
+                <td>Passing</td>
+                <td>Email</td>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+          <table id="tablem" style="margin: 50px 0px; padding: 10px 10px;">
+            <thead>
+              <tr>
+                <td>ID</th>
+                <td>Name</th>
+                <td>Gender</th>
+                <td>Class</th>
+                <td>Marks</th>
+                <td>Passing</th>
+                <td>Email</th>
+              </tr>
+            </thead>
+            <tbody id="tbodymale"></tbody>
+          </table>
+        </div>
       </div>
-      <div class="student-container">
-        <table>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th style="width: 25%">Name</th>
-              <th>Gender</th>
-              <th>Class</th>
-              <th>Marks</th>
-              <th>Passing</th>
-              <th style="width: 20%">Email</th>
-            </tr>
-          </thead>
-          <tbody id="table-body"></tbody>
-        </table>
-      </div>
-    </main>
-    <script src="./script.js"></script>
+    </div>
+    <script src="./index.js"></script>
   </body>
 </html>
